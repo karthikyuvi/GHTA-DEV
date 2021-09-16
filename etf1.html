@@ -17,12 +17,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>ETF Name</h1>
-						<p>Symbol: XYZ</p>
+						<h1 class="fund_description">ETF Name</h1>
+						<p >Symbol: <span class="fund_ticker"> XYZ</span></p>
 
 						<footer class="major">
 							<ul class="actions special">
-								<li><a href="#" class="button">Fact sheet</a></li>
+								<li><a id="fact_sheet" href="#" class="button">Fact sheet</a></li>
 								<li><a href="etf1.html" class="button">Investment Case</a></li>
 								<li><a href="etf1.html" class="button">How to Buy</a></li>
 							</ul>
@@ -55,11 +55,31 @@
 										<table>
 											<tr>
 												<td>Ticker Symbol</td>
-												<td>XYZ</td>
+												<td class="fund_ticker">XYZ</td>
 											</tr>
 											<tr>
 												<td>IOPV Ticker Symbol</td>
-												<td>XYZ</td>
+												<td class="fund_iopv">XYZ</td>
+											</tr>
+											<tr>
+												<td>Primary Listing Exchange</td>
+												<td class="fund_exchg">XYZ</td>
+											</tr>
+											<tr>
+												<td>CUSIP</td>
+												<td class="fund_cusip">XYZ</td>
+											</tr>
+											<tr>
+												<td>Inception Date</td>
+												<td class="fund_inception_date">XYZ</td>
+											</tr>
+											<tr>
+												<td>Net Assets</td>
+												<td class="fund_net_assets">XYZ</td>
+											</tr>
+											<tr>
+												<td>Shares Outstanding</td>
+												<td class="fund_shares_ots">XYZ</td>
 											</tr>
 											
 										</table>
@@ -81,6 +101,49 @@
 								</ul>
 
 							</section>
+
+							<section id="market_price" class="main special">
+								<header class="major">
+									<h2>NAV and Market Price</h2>
+									<p> Date as of <span class="fund_info_date"></span></p>
+								</header>
+								<ul class="features">
+									<li>
+										<table style="width: 100%; text-align: left;">
+										<tr>
+											<td>Net Asset Value(NAV)</td>
+											<td class="fund_nav"></td>
+										</tr>
+										<tr>
+											<td>Change($)</td>
+											<td class="fund_chg_dollar"></td>
+										</tr>
+										<tr>
+											<td>Change(%)</td>
+											<td class="fund_chg_percent"></td>
+										</tr>
+										</table>
+									</li>
+									<li>
+										<table style="width: 100%; text-align: left;">
+										<tr>
+											<td>Closing Price</td>
+											<td class="fund_close_price"></td>
+										</tr>
+										<tr>
+											<td>Change($) ?</td>
+											<td class="fund_chg_dollar"></td>
+										</tr>
+										<tr>
+											<td>Change(%) ?</td>
+											<td class="fund_chg_percent"></td>
+										</tr>
+										</table>
+									</li>
+								</ul>
+								
+							</section>
+
 
 							<section id="documents" class="main special">
 								<header class="major">
@@ -215,6 +278,126 @@ Distributed by Foreside Fund Services, LLC.
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/etf1_python.js"></script>
+
+			<!-- <script type="text/javascript" > -->
+			<script type="text/javascript">// src="downloads/goosehollow.json">
+				
+			// function readTextFile(file)
+			// {
+			//     var rawFile = new XMLHttpRequest();
+			//     rawFile.open("GET", file, false);
+			//     rawFile.onreadystatechange = function ()
+			//     {
+			//         if(rawFile.readyState === 4)
+			//         {
+			//             if(rawFile.status === 200 || rawFile.status == 0)
+			//             {
+			//                 var allText = rawFile.responseText;
+			//                 console.log(allText);
+			//             }
+			//         }
+			//     }
+			//     rawFile.send(null);
+			// }
+
+			// readTextFile("file:///D:/Github/Goosehollow/downloads/temp/20210913_goosehollow1.csv")
+
+			// $.getJSON("downloads/goosehollow.json", function(json){
+			// 	console.log(json);
+			// });
+
+			// var mydata = JSON.parse(data);
+			// console.log(mydata);
+			// alert(mydata);
+
+			// fetch("downloads/goosehollow.json")
+  	// 			.then(response => response.json())
+  	// 			.then(json => console.log(json));
+
+
+  	// 		if (typeof window.FileReader !== 'function') {
+		 //      alert("The file API isn't supported on this browser yet.");
+		 //    }
+		 //    file = "downloads/goosehollow.json"
+		 //    fr = new FileReader();
+		 //    fr.onload = receivedText;
+		 //    fr.readAsText(file);
+
+		 //    function receivedText(e) {
+		 //    	let lines = e.target.results;
+		 //    	var newArr = JSON.parse(lines);
+		 //    	console.log(newArr);
+		 //    }
+
+		 // function loadJSON(callback) {
+			//   var xObj = new XMLHttpRequest();
+			//   xObj.overrideMimeType("application/json");
+			//   xObj.open('GET', './downloads/goosehollow.json', true);
+			//   // 1. replace './data.json' with the local path of your file
+			//   for(i=0;i<=10000000000;i++);
+			//   xObj.onreadystatechange = function() {
+			//       if (xObj.readyState === 4 && xObj.status === 200) {
+			//           // 2. call your callback function
+			//           callback(xObj.responseText);
+			//       }
+			//   };
+			//   xObj.send(null);
+			// }
+
+			// function init() {
+			//   loadJSON(function(response) {
+			//     // 3. parse JSON string into JSON Object
+			//     console.log('response =', response);
+			//     var json = JSON.parse(response);
+			//     console.log('your local JSON =', JSON.stringify(json, null, 4));
+			//     // 4. render to your page
+			//     // const app = document.querySelector('#app');
+			//     // app.innerHTML = '<pre>' + JSON.stringify(json, null, 4) + '</pre>';
+			//   });
+			// }
+
+			// init();
+
+			</script>
+
+			<script type="text/javascript">
+				// $.ajax({
+				// 	url:"http://public.etfg.com/v2/public_disclosures",
+				// 	type: 'GET',
+				// 	contentType: 'application/json; charset=utf-8',
+				// 	dataType: "jsonp",
+				// 	responseType:'application/json',
+				// 	crossDomain:true,
+				// 		// data: JSON.stringify({username: "goosehollow1",
+				// 		// 						password: "368d49b781cf"}),
+				// 	 headers: {
+    //                                 "accept": "application/json",
+    //                                 'Access-Control-Allow-Credentials' : true,
+    //                                 "Access-Control-Allow-Origin":"*",
+    //                                 'Access-Control-Allow-Methods':'GET',
+    // 								'Access-Control-Allow-Headers':'*',
+    //                                 "Content-Type": "application/json"
+    //                             },
+    //                 username: 'goosehollow2',
+    //                 password: '368d49b781cf'},function(data, status){
+    //                 	console.log(data+status);
+    //                 	if (status == "success") {
+    //                       $('#contact-form').trigger("reset");
+    //                       alert("Thank you for contacting us. We'll reach out to your shortly!");
+    //                   }
+    //                   else {
+    //                       alert("Sorry, couldn't send your message. Please try again later.");
+    //                   }
+                    
+    //                 // headers: {
+    //                 //     'Authorization': 'Basic ' + btoa('goosehollow1:368d49b781cf')
+    //                 // },
+				// 	// headers:{'username':"goosehollow1",'password':"368d49b781cf"},
+
+				// });
+  
+			</script>
 
 	</body>
 </html>

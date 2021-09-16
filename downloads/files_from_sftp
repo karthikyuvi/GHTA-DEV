@@ -1,0 +1,9 @@
+files=`sftp -b - goosehollow1@public.etfg.com <<EOF ls EOF`
+files=`echo $files|sed "s/.*sftp> ls//"` 
+
+(
+  for file in $files; do
+    echo get $file
+    echo rename $file /downloads/$file
+  done
+) | > commands.txt
