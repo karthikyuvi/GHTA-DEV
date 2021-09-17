@@ -48,4 +48,4 @@ with open("assets/js/etf1_python.js",'w') as f:
 	for loop to create all the table rows for holdings
 	'''
 	f.write('document.getElementById("fund_holdings_table").innerHTML += "{}";'.format(holding_tr))
-	print(holding_tr)
+	# print(holding_tr)
