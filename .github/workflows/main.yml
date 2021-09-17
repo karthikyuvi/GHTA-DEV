@@ -27,3 +27,11 @@ jobs:
         env:
           API_USERNAME: ${{ secrets.API_USERNAME }} # if run.py requires passwords..etc, set it as secrets
           API_PASSWORD: ${{ secrets.API_PASSWORD }} # if run.py requires passwords..etc, set it as secrets
+      
+      - name: Commit files
+        run: |
+          git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          git add assets/js/*
+          git commit -am "GH ACTION Headlines $(date)"
+          git push origin main
