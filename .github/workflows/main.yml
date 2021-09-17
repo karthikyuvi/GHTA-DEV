@@ -25,5 +25,5 @@ jobs:
         run: |
           python ./test.py
         env:
-          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-      - name: export index
+          API_USERNAME: ${{ secrets.API_USERNAME }} # if run.py requires passwords..etc, set it as secrets
+          API_PASSWORD: ${{ secrets.API_PASSWORD }} # if run.py requires passwords..etc, set it as secrets
