@@ -52,6 +52,7 @@
 								<ul class="features">
 									<li>
 										<h2>ETF Details</h2>
+										<div class="table-wrapper">
 										<table>
 											<tr>
 												<td>Ticker Symbol</td>
@@ -83,9 +84,11 @@
 											</tr>
 											
 										</table>
+									</div>
 									</li>
 									<li>
 										<h2>Fees And Expenses</h2>
+										<div class="table-wrapper">
 										<table style="width: 100%">
 											<tr>
 												<td>Management Fees</td>
@@ -96,6 +99,7 @@
 												<td>0.00%</td>
 											</tr>
 										</table>
+									</div>
 										<p><sup>1</sup>Based on estimates for the current fiscal year.</p>
 									</li>
 								</ul>
@@ -109,6 +113,7 @@
 								</header>
 								<ul class="features">
 									<li>
+										<div class="table-wrapper">
 										<table style="width: 100%; text-align: left;">
 										<tr>
 											<td>Net Asset Value(NAV)</td>
@@ -123,8 +128,10 @@
 											<td class="fund_chg_percent"></td>
 										</tr>
 										</table>
+									</div>
 									</li>
 									<li>
+										<div class="table-wrapper">
 										<table style="width: 100%; text-align: left;">
 										<tr>
 											<td>Closing Price</td>
@@ -139,9 +146,35 @@
 											<td class="fund_chg_percent"></td>
 										</tr>
 										</table>
+									</div>
 									</li>
 								</ul>
 								
+							</section>
+
+							<section id="premium_discount" class="main special">
+								<header class="major">
+									<h2>Premium/Discount</h2>
+								</header>
+								<div class="table-wrapper">
+								<table style="width: 100%; text-align: left;">
+								<tr>
+										<td>Net Asset Value(NAV)</td>
+										<td>Market Price</td>
+										<td>Premium/Discount(%)</td>
+										<td>30-day Median Bid/Ask Spread(%)<sup>1</sup></td>
+									</tr>
+									<tr>
+										<td class="fund_nav"></td>
+										<td class="fund_close_price"></td>
+										<td class="fund_discount_premium"></td>
+										<td class="fund_thirty_day_median_bid_ask"></td>
+									</tr>
+								</table>
+							</div>
+								<p style="text-align: justify;">
+									<sup>1</sup>The median bid-ask spread is calculated by identifying the national best bid and national best offer (“NBBO”) for each fund as of the end of each 10 second interval during each trading day of the last 30 calendar days and dividing the difference between each such bid and offer by the midpoint of the NBBO. The median of those values is identified and that value is expressed as a percentage rounded to the nearest hundredth.
+								</p>
 							</section>
 
 
@@ -174,6 +207,7 @@
 									<h2>Performance</h2>
 								</header>
 								<h2>Total Returns as of Month Ending: segbsrgb</h2>
+								<div class="table-wrapper">
 								<table style="width: 100%; text-align: left;">
 								<tr>
 										<td></td>
@@ -192,9 +226,11 @@
 										<td>22.34%</td>
 									</tr>
 								</table>
+							</div>
 								<p style="text-align: right;">*Periods over 1-year are annualized</p>
 
 								<h2>Total Returns as of Quarter Ending: segbsrgb</h2>
+								<div class="table-wrapper">
 								<table style="width: 100%; text-align: left;">
 								<tr>
 										<td></td>
@@ -213,11 +249,37 @@
 										<td>22.34%</td>
 									</tr>
 								</table>
+							</div>
 								<p style="text-align: right;">*Periods over 1-year are annualized</p>
 								<p style="text-align: justify;">
 									The ETF Name inception date is October 21, 2020.
 Performance data quoted represents past performance and is no guarantee of future results. Current performance may be lower or higher than the performance data quoted. Investment return and principal value will fluctuate so that an investor’s shares, when redeemed, may be worth more or less than original cost. Returns are average annualized total returns, except those for periods of less than one year, which are cumulative. Shares are bought and sold at market price (not NAV) and are not individually redeemed from the Fund. Market performance is determined using the bid/ask midpoint at 4:00 p.m. Eastern time, when the NAV is typically calculated. Market performance does not represent the returns you would receive if you traded shares at other times. Brokerage commissions will reduce returns.
 </p>
+							</section>
+
+							<section id="Holdings" class="main special">
+								<header class="major">
+									<h2>Holdings</h2>
+									<p> Date as of <span class="fund_info_date"></span></p>
+								</header>
+								<div class="table-wrapper">
+								<table style="width: 100%; text-align: left;" id="fund_holdings_table">
+									<thead>
+									<tr>
+										<td>Date</td>
+										<td>Name</td>
+										<td>Ticker</td>
+										<td>CUSIP</td>
+										<td>Market Value</td>
+										<td>Shares</td>
+										<td>Weight</td>
+									</tr>
+									</thead>
+								</table>
+							</div>
+								<p style="text-align: justify;">
+									<sup>1</sup>The median bid-ask spread is calculated by identifying the national best bid and national best offer (“NBBO”) for each fund as of the end of each 10 second interval during each trading day of the last 30 calendar days and dividing the difference between each such bid and offer by the midpoint of the NBBO. The median of those values is identified and that value is expressed as a percentage rounded to the nearest hundredth.
+								</p>
 							</section>
 
 					</div>
