@@ -34,9 +34,9 @@ fund_info = r_content['data'][date_of_info][0]
 
 
 prev_nav = 0
-with open("assets/old_cache.txt",'r') as f:
-	for line in f:
-		prev_nav = float(line.strip("\n|\r"))
+#with open("assets/old_cache.txt",'r') as f:
+#	for line in f:
+#		prev_nav = float(line.strip("\n|\r"))
 
 with open("assets/js/etf1_python.js",'w') as f:
 	f.write(js_line('fund_ticker',fund_info['fund_ticker']))
