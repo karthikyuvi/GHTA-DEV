@@ -52,7 +52,7 @@ with open("assets/js/etf1_python.js",'w') as f:
 	f.write(js_line('fund_nav',fund_info['nav']))
 	f.write(js_line('fund_close_price',fund_info['market_price']))
 	f.write(js_line('fund_discount_premium',fund_info['discount_premium']))
-    f.write(js_line('fund_thirty_day_median_bid_ask',fund_info['thirty_day_median_bid_ask']))
+    	f.write(js_line('fund_thirty_day_median_bid_ask',fund_info['thirty_day_median_bid_ask']))
 
         if prev_nav == 0:
                 f.write(js_line('fund_chg_dollar',0.0)
