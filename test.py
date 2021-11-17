@@ -52,14 +52,14 @@ with open("assets/js/etf1_python.js",'w') as f:
 	f.write(js_line('fund_nav',fund_info['nav']))
 	f.write(js_line('fund_close_price',fund_info['market_price']))
 	f.write(js_line('fund_discount_premium',fund_info['discount_premium']))
-    	f.write(js_line('fund_thirty_day_median_bid_ask',fund_info['thirty_day_median_bid_ask']))
+	f.write(js_line('fund_thirty_day_median_bid_ask',fund_info['thirty_day_median_bid_ask']))
 
-        if prev_nav == 0:
-                f.write(js_line('fund_chg_dollar',0.0)
-                f.write(js_line('fund_chg_percent',0.0)
-        else
-                f.write(js_line('fund_chg_dollar', float(fund_info['nav']) - prev_nav))
-                f.write(js_line('fund_chg_percent', (float(fund_info['nav']) - prev_nav)/prev_nav))
+	if prev_nav == 0:
+		f.write(js_line('fund_chg_dollar',0.0))
+		f.write(js_line('fund_chg_percent',0.0))
+	else:
+		f.write(js_line('fund_chg_dollar', float(fund_info['nav']) - prev_nav))
+		f.write(js_line('fund_chg_percent', (float(fund_info['nav']) - prev_nav)/prev_nav))
 
 	f.write(js_line('premium_discount_days_q', fund_info['premium_discount_days_q'] ))
 	f.write(js_line('premium_discount_days_y', fund_info['premium_discount_days_y'] ))
@@ -86,4 +86,4 @@ with open("assets/js/etf1_python.js",'w') as f:
 	# print(holding_tr)
 
 with open("assets/old_cache.txt",'w') as f:
-    f.write(str(fund_info['nav']))
+        f.write(str(fund_info['nav']))
