@@ -59,7 +59,7 @@ with open("assets/js/etf1_python.js",'w') as f:
 		f.write(js_line('fund_chg_percent',0.0))
 	else:
 		f.write(js_line('fund_chg_dollar', float(fund_info['nav']) - prev_nav))
-		f.write(js_line('fund_chg_percent', (float(fund_info['nav']) - prev_nav)/prev_nav))
+		f.write(js_line('fund_chg_percent', round((float(fund_info['nav']) - prev_nav)/prev_nav,4)))
 
 	f.write(js_line('premium_discount_days_q', fund_info['premium_discount_days_q'] ))
 	f.write(js_line('premium_discount_days_y', fund_info['premium_discount_days_y'] ))
@@ -76,7 +76,7 @@ with open("assets/js/etf1_python.js",'w') as f:
 	for i in range(0,len(fund_info['constituents'])):
 		holding_info = fund_info['constituents'][i]
 		holding_tr += "<tr>"
-		holding_tr += "<td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td>".format(holding_info['as_of_date'],holding_info['constituent_description'],holding_info['constituent_ticker'],holding_info['constituent_cusip'],holding_info['constituent_market_value'],holding_info['shares_held_of_constituent'],holding_info['constituent_weight'])
+		holding_tr += "<td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td>".format(holding_info['as_of_date'],holding_info['constituent_description'],holding_info['constituent_ticker'],holding_info['constituent_cusip'],holding_info['constituent_market_value'],round(float(holding_info['shares_held_of_constituent'])),round(float(holding_info['constituent_weight']),3))
 		holding_tr += "</tr>"
 	##Holdings table
 	'''
