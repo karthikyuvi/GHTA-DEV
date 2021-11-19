@@ -77,7 +77,7 @@ with open("assets/js/etf1_python.js",'w') as f:
 		holding_info = fund_info['constituents'][i]
 		holding_tr += "<tr>"
 		holding_tr += "<td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td>".format(holding_info['as_of_date'],holding_info['constituent_description'],holding_info['constituent_ticker'],holding_info['constituent_cusip'],holding_info['constituent_market_value'],round(float(holding_info['shares_held_of_constituent'])),round(float(holding_info['constituent_weight']),3))
-		holding_tr += "</tr>"
+		holding_tr += "</tr>\n"
 	##Holdings table
 	'''
 	for loop to create all the table rows for holdings
