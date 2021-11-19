@@ -4,7 +4,7 @@ import json
 import os
 
 
-js_loop = "for( i=0 ;i< document.getElementsByClassName('{0}').length;i++){{ document.getElementsByClassName('{0}')[i].innerHTML = '{1}'; }}"
+js_loop = "for( i=0 ;i< document.getElementsByClassName('{0}').length;i++){{ document.getElementsByClassName('{0}')[i].innerHTML = '{1}'; }}\n"
 def js_line(value1, value2):
 	try:
 		l = js_loop.format(value1, value2)
