@@ -1,15 +1,22 @@
+from math import nan
 import requests
 from requests.auth import HTTPDigestAuth
 import json
 import os
 
-js_loop = "for( i=0 ;i< document.getElementsByClassName('{0}').length;i++){{ document.getElementsByClassName('{0}')[i].innerHTML = '{1}'; }}"
+js_loop = "for( i=0 ;i< document.getElementsByClassName('{0}').length;i++) {{ document.getElementsByClassName('{0}')[i].innerHTML = '{1}'; }}\n"
 
 def delta(x, y, n: int):
-    return round(float(x) - float(y), n)
+    if x is None or y is None:
+        return nan
+    else:
+        return round(float(x) - float(y), n)
 
 def pch(x, y, n: int):
-    return round((float(x)/float(y) - 1) * 100.0, n)
+    if x is None or y is None:
+        return nan
+    else:
+        return round((float(x)/float(y) - 1) * 100.0, n)
 
 def js_line(value1, value2):
     try:
