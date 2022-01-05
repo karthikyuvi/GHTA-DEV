@@ -4,8 +4,6 @@ from requests.auth import HTTPDigestAuth
 import json
 import os
 
-exit(1)
-
 js_loop = "for( i=0 ;i< document.getElementsByClassName('{0}').length;i++) {{ document.getElementsByClassName('{0}')[i].innerHTML = '{1}'; }}\n"
 
 def delta(x, y, n: int):
