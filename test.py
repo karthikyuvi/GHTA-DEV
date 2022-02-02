@@ -123,8 +123,29 @@ if not fund_info['as_of_date'] in fund_history.keys():
 
 #### Create Graph js ####
 with open("assets/js/etf1_dygraph2.js", 'w') as f2:
-    historic_data = "DATE,NAV,PRICE" + "\\n"
+    graph_options = "includeZero: true, \
+    xlabel: 'Date', \
+    xRangePad: 10, \
+    ylabel: '<span style=\"position: absolute; transform: translate(-50%, -10px)\">Premium/Discount</span>', \
+    legend: 'always', \
+    title: 'Historical Premium/Discount', \
+    axisLabelFormatter: function (number) { \
+                if (typeof number === 'object') { \
+                    return new Date(number).toLocaleDateString('en-us'); \
+                } \
+                return parseFloat(number).toFixed(2) + '%'; \
+            },\
+    valueFormatter: function (number) { \
+                var numDate = new Date(number); \
+                if (numDate > 1448327658) { \
+                    return new Date(number).toLocaleDateString('en-us'); \
+                } \
+                return parseFloat(number).toFixed(2) + '%'; \
+            }"
+    historic_data = "DATE,Premium/Discount" + "\\n"
     with open("assets/old_cache.txt", 'r') as data_file:
         for line in data_file:
-            historic_data+=line.replace("\t",",").replace("\n","\\n")
-    f2.write("g2 = new Dygraph( document.getElementById('graphdiv2'), '"+historic_data+"', {  legend: 'always', ylabel: 'Price ($)' } );")
+            date, nav, price=line.replace("\t",",").strip("\n|\r").split(",")
+            prem_dis = (float(nav)/float(price)) - 1
+            historic_data += "{},{}\\n".format(date, prem_dis*100)
+    f2.write("g2 = new Dygraph( document.getElementById('graphdiv2'), '"+historic_data+"', { " + graph_options + "} );")
