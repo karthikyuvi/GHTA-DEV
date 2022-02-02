@@ -127,4 +127,4 @@ with open("assets/js/etf1_dygraph2.js", 'w') as f2:
     with open("assets/old_cache.txt", 'r') as data_file:
         for line in data_file:
             historic_data+=line.replace("\t",",").replace("\n","\\n")
-    f2.write("g2 = new Dygraph( document.getElementById('graphdiv2'), '"+historic_data+"', {  legend: 'always', title: 'GHTA ETF', ylabel: 'Price ($)' } );")
+    f2.write("g2 = new Dygraph( document.getElementById('graphdiv2'), '"+historic_data+"', {  legend: 'always', ylabel: 'Price ($)' } );")
