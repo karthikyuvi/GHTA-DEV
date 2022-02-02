@@ -118,3 +118,13 @@ if not fund_info['as_of_date'] in fund_history.keys():
     with open("assets/old_cache.txt", 'a') as f:
         f.write(
             str(fund_info['as_of_date']) + "\t" + str(fund_info['nav']) + "\t" + str(fund_info['market_price']) + "\n")
+
+
+
+#### Create Graph js ####
+with open("assets/js/etf1_dygraph2.js", 'w') as f2:
+    historic_data = "DATE,NAV,PRICE" + "\\n"
+    with open("assets/old_cache.txt", 'r') as data_file:
+        for line in data_file:
+            historic_data+=line.replace("\t",",").replace("\n","\\n")
+    f2.write("g2 = new Dygraph( document.getElementById('graphdiv2'), '"+historic_data+"', {  legend: 'always', title: 'GHTA ETF', ylabel: 'Price ($)' } );")

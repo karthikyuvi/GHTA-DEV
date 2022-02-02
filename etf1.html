@@ -9,6 +9,9 @@
 		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<script src="assets/js/dygraph.js"></script>
+		<link rel="stylesheet" href="assets/css/dygraph.css" />
 	</head>
 	<body class="is-preload">
 
@@ -274,6 +277,11 @@
 									The ETF Name inception date is November 16, 2021.
 Performance data quoted represents past performance and is no guarantee of future results. Current performance may be lower or higher than the performance data quoted. Investment return and principal value will fluctuate so that an investor’s shares, when redeemed, may be worth more or less than original cost. Returns are average annualized total returns, except those for periods of less than one year, which are cumulative. Shares are bought and sold at market price (not NAV) and are not individually redeemed from the Fund. Market performance is determined using the bid/ask midpoint at 4:00 p.m. Eastern time, when the NAV is typically calculated. Market performance does not represent the returns you would receive if you traded shares at other times. Brokerage commissions will reduce returns.
 </p>
+							<div class="table-wrapper">
+							<div id="graphdiv2" style="width:100%;"></div>
+								
+							</div>
+
 							</section>
 
 							<section id="Holdings" class="main special">
@@ -433,6 +441,8 @@ Performance data quoted represents past performance and is no guarantee of futur
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/etf1_python.js"></script>
+
+			<script src="assets/js/etf1_dygraph2.js"></script>
 
 			<!-- <script type="text/javascript" > -->
 			<script type="text/javascript">// src="downloads/goosehollow.json">
